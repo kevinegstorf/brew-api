@@ -20,7 +20,7 @@ dotenv.config();
 const app: Application = express();
 new Server(app);
 
-const PORT: number = process.env.PORT ? parseInt(process.env.PORT, 10) : 8080;
+const PORT: number = process.env.PORT ? parseInt(process.env.PORT, 443) : 8080;
 
 app.use(express.static(path.join(__dirname, 'public')));
 
