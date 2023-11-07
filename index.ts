@@ -18,9 +18,10 @@ class Server {
 dotenv.config();
 
 const app: Application = express();
-new Server(app);
+new Server(app)
+dotenv.config();
 
-const PORT: number = process.env.PORT ? parseInt(process.env.PORT, 443) : 8080;
+const port = process.env.PORT || 8000;
 
 app.use(express.static(path.join(__dirname, 'public')));
 
@@ -29,14 +30,6 @@ app.get('/', (_req: Request, res: Response) => {
   res.json({ message: "Welcome to my api." });
 });
 
-app
-  .listen(PORT, "localhost", function () {
-    console.log(`Server is running on port ${PORT}.`);
-  })
-  .on("error", (err: any) => {
-    if (err.code === "EADDRINUSE") {
-      console.log(`Error: ${PORT} address already in use`);
-    } else {
-      console.log(err);
-    }
-  });
+app.listen(port, () => {
+  console.log(`Server is Fired at http://localhost:${port}`);
+});
