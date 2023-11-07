@@ -1,4 +1,4 @@
-interface Batch {
+export interface Batch {
     name: string
     date: Date
     type: string

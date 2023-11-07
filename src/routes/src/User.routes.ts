@@ -1,9 +1,10 @@
 import { Router } from "express";
-import BatchController from "../controllers/Batch.controller";
+import UserController from "../../controllers/User.controller";
 
-class BatchRoutes {
+
+class UserRoutes {
   router = Router();
-  controller = new BatchController();
+  controller = new UserController();
 
   constructor() {
     this.intializeRoutes();
@@ -27,4 +28,4 @@ class BatchRoutes {
   }
 }
 
-export default new BatchRoutes().router;
+export default new UserRoutes().router;
